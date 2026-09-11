@@ -1,3 +1,5 @@
+import type { IdeaApproval } from "./idea-lifecycle";
+
 export type IdeaDirection = "LONG" | "SHORT";
 export type IdeaStatus =
   | "WATCH"
@@ -26,6 +28,7 @@ export interface InvestmentIdea {
   proposedSizePct: number;
   maxLossPct: number;
   manualApprovalRequired: boolean;
+  manualApproval?: IdeaApproval;
 }
 
 export function requiresManualApproval(idea: InvestmentIdea): boolean {
